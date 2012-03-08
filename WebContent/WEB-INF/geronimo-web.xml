@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://geronimo.apache.org/xml/ns/j2ee/web-1.1" xmlns:nam="http://geronimo.apache.org/xml/ns/naming-1.1" xmlns:sec="http://geronimo.apache.org/xml/ns/security-1.1" xmlns:sys="http://geronimo.apache.org/xml/ns/deployment-1.1">
+  <sys:environment>
+    <sys:moduleId>
+      <sys:groupId>default</sys:groupId>
+      <sys:artifactId>TGMC-version1</sys:artifactId>
+      <sys:version>1.0</sys:version>
+      <sys:type>car</sys:type>
+    </sys:moduleId>
+    <sys:dependencies>
+      <sys:dependency>
+        <sys:groupId>console.dbpool</sys:groupId>
+        <sys:artifactId>jdbc_dbpool</sys:artifactId>
+        <sys:version></sys:version>
+        <sys:type></sys:type>
+      </sys:dependency>
+    </sys:dependencies>
+  </sys:environment>
+  <context-root>/TGMC-version1</context-root>
+  <nam:resource-ref>
+    <nam:ref-name>jdbc/MyDataSource</nam:ref-name>
+    <nam:resource-link>jdbc/dbpool</nam:resource-link>
+  </nam:resource-ref>
+</web-app>

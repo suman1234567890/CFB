@@ -1,0 +1,695 @@
+{
+border: 0;
+margin: 0;
+}
+
+img
+{
+border: 0px;
+}
+
+body{
+font-size:12px;
+font-family: Georgia, "Times New Roman", Times, serif;
+	color: #000000;
+	/* background: #000000;*/
+	line-height: 20px;
+}
+
+	
+#main {
+	width: 1014px;
+	margin: 0px auto;
+	background:url(images/main.jpg) right top no-repeat;}
+
+#header { 
+	width:1010px;
+	height: 204px;
+}
+
+#logo {	
+		height: 97px;
+		padding: 44px 0px 0px 7px;
+}
+
+#logo H2 {
+
+		font-family: Arial, Helvetica, sans-serif;
+		color:#FFFFFF;
+		font-size:18px;
+		font-style:italic;
+		}
+
+#logo a {
+	text-decoration: none;
+	text-transform: lowercase;
+	font-style: italic;
+	font-size: 16px;
+	color: #FFFFFF;
+}
+	
+#logo H2 a{
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:100;
+}
+
+#buttons{
+	text-align:center;
+	height: 48px;
+	margin-left: 0px;
+	padding-left: 0px;
+	background: url(images/but_bg.png) left top no-repeat;
+}
+
+#buttons a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	display: block;
+	float: left;
+	text-decoration: none;
+	color: #FFFFFF;
+	text-align: center;
+	padding-top: 14px;
+	height: 34px;
+}
+
+.but {
+	width: 103px;
+}
+
+.but_razd { width: 2px;
+	height: 48px;
+	background:url(images/razd_but.gif) left 6px no-repeat;
+	float:left;}
+
+#buttons .but:hover {
+	text-decoration:underline;}
+	
+.top { height:324px;}
+
+.top_text {
+	width: 1010px;
+	float:left;
+	background: url(images/content_text.png);
+	height:308px;
+}
+
+.top_img { 
+	float:left;
+	padding: 15px 31px 0px 15px;			
+	}
+.top h1 {
+	color:#002380;
+	font-size:24px;
+	padding: 15px 0px 15px 0px;
+	font-weight:100;
+}
+
+.my_header
+{
+padding-right: 20px;
+}
+
+.scroll_left
+{
+width: 450px;
+float: left;
+}
+
+.scroll_right
+{
+width: 500px;
+float: right;
+}
+
+.scroll_right p
+{
+padding: 10px;
+}
+.scroll_left_inside
+{
+width: 230px;
+float: left;
+padding: 10px
+}
+
+.scroll_right_inside
+{
+width: 230px;
+float: right;
+padding: 10px
+}
+
+.scroll_right_inside ul, .scroll_left_inside ul
+{
+list-style-type: none
+}
+
+.scroll_right_inside li, .scroll_left_inside li
+{
+background: url(images/small_thing.gif) no-repeat 0px 7px ;
+padding-left: 20px;
+}
+
+.scroll_right_inside a, .scroll_left_inside a, .scroll_right a, .scroll_left a
+{
+color: #002380;
+font-weight: bold;
+text-decoration: none;
+}
+
+.scroll_right_inside a:hover, .scroll_left_inside a:hover, .scroll_right a:hover, .scroll_left a:hover
+{
+text-decoration: underline;
+}
+
+#content{
+	width: 100%;
+	background: url(images/content_text.png);
+}
+
+.cont_top{
+	background: url(images/cont_top.png) left top no-repeat;
+	height: 15px;
+	width: 100%;
+}
+
+.cont_bot{
+	background: url(images/cont_bot.png) left bottom no-repeat;
+	height: 15px;
+	width: 100%;
+}
+
+#cont_razd{
+	background: url(images/razd_cont.gif) 726px repeat-y;
+	width: 100%;
+}
+
+
+#left{
+	width: 697px;
+	float: left;
+	color:#000000;
+	margin-left: 15px;
+}
+
+.text{
+	padding: 0px 0px 15px 0px;
+}
+
+.img_l {	float:left;
+		margin: 6px 15px 5px 0px;
+}
+
+.img_r {	float: right;
+		margin: 9px 10px 3px 10px;
+}
+
+.span_cont {	color: #002380;
+	font-size:12px;
+	font-weight:bold;
+}
+
+#left H1{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:24px;
+	font-weight: 100;
+	color: #002380;
+	text-align: left;
+	padding: 0px 0px 10px 0px;
+}
+
+#right H1{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:24px;
+	font-weight: 100;
+	color: #002380;
+	text-align: left;
+	padding: 0px 0px 10px 0px;
+}
+
+.read_l{
+	text-align:right;
+	padding: 6px 6px 3px 0px;
+	background: url(images/read.png) right 8px no-repeat;
+}
+
+.read_l a {
+	font-size:12px;
+	color: #ffffff;
+	text-decoration: none;
+	padding-right: 2px;
+	
+}
+
+.read_l a:hover {
+	font-size:12px;
+	color: #000000;
+	text-decoration: none;
+}
+
+.next {
+	width: 100%;
+	text-align: right;
+	padding: 0px 0px 0px 0px;}
+
+	.next a{
+	color:#FFFFFF;
+	text-decoration: none; }
+
+.next a:hover {
+	text-decoration: underline; }
+
+
+
+#right{
+	float: right;
+	width: 242px;
+	margin-right: 31px;
+}
+
+.span_dat {
+	color: #002380;
+	text-decoration: underline;}
+	
+#bottom {
+	width: 100%;
+}
+#bottom h1{
+	background:url(images/bottom_h1.gif) left top no-repeat;
+	padding: 10px 0px 15px 17px;
+	font-size: 18px;
+	text-align: left;
+	color: #FFFFFF;
+	font-weight:100;
+}
+#bottom h2{
+	background:url(images/bottom_h2.gif) left top no-repeat;
+	padding: 10px 0px 15px 17px;
+	font-size: 18px;
+	text-align: left;
+	color: #FFFFFF;
+	font-weight:100;
+}
+
+#b_col1 {
+	width: 197px;
+	float: left;
+	margin-left: 14px;
+}
+#b_col2 {
+	width: 197px;
+	float: left;
+	margin-left: 29px;
+}
+#b_col3 {
+	width: 254px;
+	float: left;
+	margin-left: 27px;
+	text-align:center;
+}
+#b_col4 {
+	width: 254px;
+	float: left;
+	margin-left: 28px;
+	text-align:center;
+}
+
+.input_txt {
+	width: 222px;
+	border: none;
+	background: url(images/input.gif) left top no-repeat;
+	padding: 6px 16px 6px 16px;
+	color:#CFCFCF;
+}
+.text_area {
+	width: 222px;
+	height:90px;
+	border: none;
+	background: url(images/text_area.gif) 0px 0px no-repeat;
+	padding: 6px 16px 6px 16px;
+	color:#CFCFCF;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.submit {
+	background:url(images/submit.gif) right 8px no-repeat;
+	text-align: center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding: 8px 6px 3px 0px;
+	font-size:12px;
+	color: #ffffff;
+	text-decoration: none;
+	padding-right: 2px;
+	font-weight:bold;
+	width: 74px;
+	margin: 0px 0px 0px 178px;
+}
+
+
+#bottom ul {
+	list-style:none;
+	padding: 0px 0px 0px 13px;}
+
+#bottom li {
+	padding: 8px 0px 0px 20px;
+	background: url(images/fish2.gif) 0px 14px no-repeat;
+	}
+#bottom ul a:hover {
+	text-decoration:underline;
+	}
+	
+#bottom ul a {
+	color:#ffffff;
+	text-decoration:none;
+	font-weight: bold;}
+	
+.fu_i {
+	padding: 0px 14px 0px 0px;
+	vertical-align: middle ;
+}
+
+#b_col2 ul {
+	list-style:none;
+	padding: 0px 0px 0px 13px;}
+
+#b_col2 li {
+	padding: 8px 0px 0px 0px;
+	background: none;
+	}
+
+#footer{
+	height: 60px;
+	font-size: 12px;
+	color: #ffffff;
+	text-align: center;
+	padding: 33px 0px 0px 0px;
+	background: url(images/footer.jpg) 0px 15px no-repeat;
+}
+
+#footer a{
+	color: #ffffff;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+#footer a:hover{
+	color: #ffffff;
+	font-size: 12px;
+	text-decoration: underline;
+}
+
+/* index1 */
+
+
+.datc_coment {
+	height: 30px;
+	width: 100%;
+	border-bottom: 1px solid #AEB9DA;}
+
+.datc  {
+	float: left;
+	width: 346px;}
+
+.coment {
+	float: right;
+	width: 146px;}
+
+.datc_coment a {
+	color: #002380;
+	text-decoration:none;}
+
+.datc_coment a:hover {
+	text-decoration:underline;}
+
+.img_ind1 {
+	padding: 17px 0px 10px 0px;}
+
+.text_ind1 {
+	padding: 0px 87px 0px 0px;}
+
+#right h2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:24px;
+	font-weight: 100;
+	color: #002380;
+	text-align: left;
+	padding: 0px 0px 3px 0px;
+	border-bottom: 1px solid #AEB9DA;
+}
+
+
+.spis_und {
+	list-style:none;
+	padding: 0px 0px 0px 13px;}
+.spis_und li {
+	padding: 8px 0px 0px 20px;
+	background: url(images/fish1.gif) 0px 14px no-repeat;
+	}
+.spis_und a:hover {
+	text-decoration:none;	
+	}	
+.spis_und a {
+	color:#002380;
+	text-decoration:underline;
+	font-weight: bold;}
+
+
+.spis {
+	list-style:none;
+	padding: 0px 0px 0px 13px;}
+
+.spis  li {
+	padding: 8px 0px 0px 20px;
+	background: url(images/fish1.gif) 0px 14px no-repeat;
+	}
+.spis a:hover {
+	text-decoration:underline;
+	}
+	
+.spis a {
+	color:#002380;
+	text-decoration:none;
+	font-weight: bold;}
+
+
+/* index2 */
+
+.row {
+	padding: 0px 0px 0px 0px;/*16px;*/
+	height: 235px;
+	width: 999px; 
+}
+
+.box_img2 {
+
+	width: 258px;
+	height: 185px;
+	background: url(images/img_bg_ind3.png) 0px 0px no-repeat;
+	padding: 7px 0px 0px 7px;
+	float:left;
+}
+
+.box_razd {
+	width: 14px;
+	height: 50px;
+	float: left;
+}
+
+.box_img2 h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size:24px;
+	font-weight: 100;
+	color: #33FF00;
+	text-align: left;
+	padding: 8px 0px 3px 0px;
+}
+.box_img2 a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:24px;
+	font-weight: 100;
+	color: #006600;
+	text-align: left;
+	padding: 8px 0px 3px 0px;
+}
+
+.rol_over:hover {
+
+background:url(images/rol_over_galery.png) left top no-repeat;
+}
+
+.g_size {
+width: 235px;
+height: 130px;
+display: block;
+}
+
+.g1 {
+background:url(images/photobotics1.jpg) left top no-repeat;} 
+.g2 {
+background:url(images/optimusprime1.jpg) left top no-repeat;}
+.g3 {
+background:url(images/chess1.jpg) left top no-repeat;}
+.g4 {
+background:url(images/robowarz1.jpg) left top no-repeat;}
+.g5 {
+background:url(images/terraranger1.jpg) left top no-repeat;}
+.g6 {
+background:url(images/sudoku1.jpg) left top no-repeat;}
+.g7 {
+background:url(images/extractor1.jpg) left top no-repeat;}
+.g8 {
+background:url(images/arithmos1.jpg) left top no-repeat;}
+.g9 {
+background:url(images/puzzle-duzzle1.jpg) left top no-repeat;}
+.g10 {
+background:url(images/dispute1.JPG) left top no-repeat;} 
+.g11 {
+background:url(images/lenz1.jpg) left top no-repeat;}
+.g12 {
+background:url(images/cs1.jpg) left top no-repeat;}
+.g13 {
+background:url(images/fifa091.jpg) left top no-repeat;}
+.g14 {
+background:url(images/NFSU_21.jpg) left top no-repeat;}
+.g15 {
+background:url(images/ecode1.jpg) left top no-repeat;}
+.g16 {
+background:url(images/web_diva1.jpg) left top no-repeat;}
+.g17 {
+background:url(images/inception1.jpg) left top no-repeat;}
+.g18 {
+background:url(images/quiz1.jpg) left top no-repeat;}
+.g19 {
+background:url(images/documentry1.jpg) left top no-repeat;}
+.g20 {
+background:url(images/contrive.jpg) left top no-repeat;}
+.g21 {
+background:url(images/ecotalk1.jpg) left top no-repeat;}
+.g22 {
+background:url(images/ad1.gif) left top no-repeat;}
+.g23 {
+background:url(images/exhibition1.jpg) left top no-repeat;}
+
+.pirobox_gal1
+{
+width: 235px;
+height: 95px;
+display: block;
+}
+
+.pirobox_gal1:hover
+{
+width: 235px;
+height: 130px;
+display: block;
+background:url(images/rol_over_galery.png) left top no-repeat;
+}
+
+/* index3 */
+
+.text_ind3 {
+	padding: 5px 30px 0px 0px;
+
+}
+
+/* index4 */
+.input_txt2 {	
+	width: 254px;
+	border: none;
+	background: url(images/input_ind5.gif) left top no-repeat;
+	padding: 8px 16px 8px 16px;
+	color:#CFCFCF;
+
+}
+
+.text_area2 {
+	width: 644px;
+	height:157px;
+	border: none;
+	background: url(images/message_ind5.gif) 0px 0px no-repeat;
+	padding: 6px 16px 6px 16px;
+	color:#CFCFCF;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.submit2 {
+	background: url(images/but_submi_ind5.gif) right 0px no-repeat;
+	text-align: center;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	padding: 8px 6px 8px 0px;
+	font-size:12px;
+	color: #002380;
+	text-decoration: none;
+	padding-right: 2px;
+	font-weight:bold;
+	width: 99px;
+	margin: 0px 0px 0px 0px;
+}
+
+.wiew_map {
+font-size:12px;
+color: #6F0000;
+text-decoration:none;}
+
+.wiew:hover {
+text-decoration:underline;}
+
+/*
+Header Scroller
+*/
+
+/*
+	jQuery Coda-Slider v2.0 - http://www.ndoherty.biz/coda-slider
+	Copyright (c) 2009 Niall Doherty
+	This plugin available for use in all personal or commercial projects under both MIT and GPL licenses.
+*/
+
+/* Insignificant stuff, for demo purposes */
+
+	.panel h2.title { margin-bottom: 10px }
+	noscript div { background: #ccc; border: 1px solid #900; margin: 20px 0; padding: 15px }
+
+/* Most common stuff you'll need to change */
+
+	.coda-slider-wrapper { padding: 0px }
+	.coda-slider { background: none}
+	
+	/* Use this to keep the slider content contained in a box even when JavaScript is disabled */
+	.coda-slider-no-js .coda-slider { height: 308px; overflow: hidden !important; padding-right: 20px }
+	
+	/* Change the width of the entire slider (without dynamic arrows) */
+	.coda-slider, .coda-slider .panel { width: 1010px } 
+	
+	/* Change margin and width of the slider (with dynamic arrows) */
+	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { width: 970px }
+	.coda-slider-wrapper.arrows .coda-slider { margin: 0px }
+	
+	/* Arrow styling */
+	.coda-nav-left a { background: url(images/top_left.jpg) no-repeat; color: #fff; width: 20px; height: 308px; text-indent: -9000em;}
+	.coda-nav-right a { background: url(images/top_right.jpg) no-repeat; color: #fff; width: 20px; height: 308px; text-indent: -9000em;}
+	
+	/* Tab nav */
+	.coda-nav ul li a.current { background: #39c }
+	
+	/* Panel padding */
+	.coda-slider .panel-wrapper { padding: 0px }
+	
+	/* Preloader */
+	.coda-slider p.loading { padding: 20px; text-align: center }
+
+/* Don't change anything below here unless you know what you're doing */
+
+	/* Tabbed nav */
+	.coda-nav ul { clear: both; display: block; margin: auto; overflow: hidden }
+	.coda-nav ul li { display: none }
+	.coda-nav ul li a { background: #000; color: #fff; display: block; float: left; margin-right: 1px; padding: 3px 6px; text-decoration: none }
+	
+	/* Miscellaneous */
+	.coda-slider-wrapper { clear: both; overflow: hidden }
+	.coda-slider { float: left; overflow: hidden; position: relative }
+	.coda-slider .panel { display: block; float: left }
+	.coda-slider .panel-container { position: relative }
+	.coda-nav-left, .coda-nav-right { float: left }
+	.coda-nav-left a, .coda-nav-right a { display: block; text-align: center; text-decoration: none }
