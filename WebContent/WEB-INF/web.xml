@@ -45,4 +45,14 @@
     <servlet-name>showSubject</servlet-name>
     <url-pattern>/showSubject.xml</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>addQuestion</display-name>
+    <servlet-name>addQuestion</servlet-name>
+    <servlet-class>CFB.Faculty.subject.Question.addQuestion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addQuestion</servlet-name>
+    <url-pattern>/addQuestion</url-pattern>
+  </servlet-mapping>
 </web-app>

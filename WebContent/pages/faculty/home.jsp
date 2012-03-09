@@ -364,3 +364,43 @@
                 </div>
             </div>
         </div>
+ <!--   Add Question -->
+ <div id ='containerQuestion' >
+ <div>
+ Add Question
+ </div>
+<div id='AddQuestionContainer' style='width:95%;height:500px;color:gray'>
+<div style='width:95%;'>
+	<div style='width:100%;height:50px; margin-left:30px'>
+		<label>Enter The Question : </label>
+		
+		<input id='question' type='text' style='width:70%;'/>
+		<input type='button' id='addOption' onClick='addOptionToForm()' value='+'/>
+
+	</div>
+	<div id='containertot'>
+		<div id='optionContainer' style='float:left;width:50%;'>
+		</div>
+		<div id='buttonContainer' style='float:right;width:50%'>
+			<label>Correct  Marks :</label><input type='text' value='1' id='correctmarks' style='width:20px'/></br>
+			<label>Negative Marks :</label><input type='text' value='0' id='negativemarks'  style='width:20px'/></br>
+			<input type='button' value='Save' id='save'/>
+			<input type='button' value='Reset' id='reset'/>
+			<div id='questionremarks'>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+<!-- End question-->
+<div id='viewquestion'>
+<div>
+ViewQuestion
+</div>
+<div id='viewquestioncontainer'>
+
+</div>
+</div>

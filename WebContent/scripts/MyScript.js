@@ -1,4 +1,6 @@
 var theme = 'classic';
+var subid=0;
+var totaloption=0;
 $(document).ready(function () {
 
     switch (theme) {
@@ -22,6 +24,39 @@ $(document).ready(function () {
     $(".jqx-menu-search").jqxButton({ width: 60, theme: theme });
     $("#jqxNavigationBar").jqxNavigationBar({ width: 300, expandMode: 'multiple', expandedIndexes: [2, 3], theme: theme });
     $("#clickonadd").css('visibility', 'hidden');
+    $("#save").jqxButton({ width: 60, theme: theme });
+    $("#reset").jqxButton({ width: 60, theme: theme });
+    $('#containerQuestion').jqxWindow({ maxHeight: 400, maxWidth: 700, minHeight: 30, minWidth: 250, height: 400, width:600,
+        theme: theme, resizable: false, isModal: true, modalOpacity: 0.3,
+        cancelButton: $('#reset')
+    });
+    hideQuestionContainer();
+    $("#save").bind('click',function(){
+    	document.getElementById('questionremarks').innerHTML="Data Uploading...";
+        var i =0;
+        var option="";
+        var check="";
+    	var question=document.getElementById('question').value;
+    	var cmarks=document.getElementById('correctmarks').value;
+    	var nmarks=document.getElementById('negativemarks').value;
+    	for(i=0;i<totaloption;i++)
+    	{
+    		option+=document.getElementById('option'+i).value+",";
+    		if(document.getElementById('coroption'+i).checked)
+    		{
+    			check+=i+",";
+    		}
+    		
+    	}
+    	if(option=="" || question==""||cmarks=="" || nmarks=="" || check=="")
+    	{
+    		alert("Fill the form");
+    	}
+    	$.post('../../addQuestion',{sub:subid,qtn: question,cm:cmarks,nm:nmarks,opt:option,cor:check},function(){document.getElementById('questionremarks').innerHTML="Successfully Data Saved";});
+    	alert('you result'+question+cmarks+nmarks+option);
+    });
+	
+    
 
 
     var wizard = (function () {
@@ -250,26 +285,26 @@ $(document).ready(function () {
         if (text == 61) {
 
             $('#elements1').jqxGrid('destroy');
-            document.getElementById('elements').innerHTML = "<div id='elements1'></div><div align='center' > <input type='button' value='Add Subject' id='showWindowButton'/></div>";
+            document.getElementById('elements').innerHTML = "<div id='elements1'></div><div align='center' > <input type='button' value='Add Contest' id='AddContestContainerButton'/></div>";
 
-            $("#showWindowButton").jqxButton({ width: 100, theme: theme });
-            addEventListener();
-            $("#clickonadd").css('visibility', 'visible');
-            addSubject();
+            $("#AddContestContainerButton").jqxButton({ width: 100, theme: theme });
+            
+            $("#addContestContainer").css('visibility', 'visible');
+            addContest();
 
         }
         if (text == 62) {
             alert("This is subject");
             $('#elements1').jqxGrid('destroy');
-            document.getElementById('elements').innerHTML = "<div id='elements1'></div><div align='center' > <input type='button' value='Add Contest' id='AddContestContainerButton'/></div>";
+            document.getElementById('elements').innerHTML = "<div id='elements1'></div><div align='center' > <input type='button' value='Add Subject' id='showWindowButton'/></div>";
 
-            $("#AddContestContainerButton").jqxButton({ width: 100, theme: theme });
+            $("#showWindowButton").jqxButton({ width: 100, theme: theme });
+			addEventListener();
 
 
 
-
-            $("#addContestContainer").css('visibility', 'visible');
-            addContest();
+            $("#clickonadd").css('visibility', 'visible');
+            addSubject();
 
         }
         alert(text);
@@ -349,22 +384,40 @@ function addSubject() {
                 }
                 var format = { target: '"_blank"' };
                 //var html = $.jqx.dataFormat.formatlink(value, format);
+                //var html = "<a href='#' onclick='showAddContest()'>"+value+"</a>";
                 var html = "<a href='#' onclick='showAddContest()'>"+value+"</a>";
                 return html;
             }
-            var view=function(row,column,value){
-            	var html="<a href='#' onclick='ViewContestId()'>"+value+"</a>"
-            	return html;
+            var view1 = function (row, column, value) {
+                if (value.indexOf('#') != -1) {
+                    value = value.substring(0, value.indexOf('#'));
+                }
+                var format = { target: '"_blank"' };
+                //var html = $.jqx.dataFormat.formatlink(value, format);
+                //var html = "<a href='#' onclick='showAddContest()'>"+value+"</a>";
+                
+                var html = "<a href='#' onclick='showQuestionContainer("+value+")'>ADD</a>";
+                return html;
             }
+            
             var edit=function(row,column,value){
-            	var html="<a href='#' onclick='ContestEdit("+value+")'>Edit</a>"
+            	if (value.indexOf('#') != -1) {
+                    value = value.substring(0, value.indexOf('#'));
+                }
+            	var html="<a href='#' onclick='ContestView("+value+")'>View</a>"
             	return html;
             }
             var deleteid=function(row,column,value){
+            	if (value.indexOf('#') != -1) {
+                    value = value.substring(0, value.indexOf('#'));
+                }
             	var html="<a href='#' onclick='ContestDeleteRow("+value+")'>delete</a>"
             	return html;
             }
             var download=function(row,column,value){
+            	if (value.indexOf('#') != -1) {
+                    value = value.substring(0, value.indexOf('#'));
+                }
             	var html="<a href='#' onclick='ContestDownload("+value+")'>+Download</a>"
             	return html;
             }
@@ -380,11 +433,11 @@ function addSubject() {
                 pageable: true,
                 autoheight: true,
                 columns: [
-                  { text: 'Contest', datafield: 'SubjectName', width: 430, cellsrenderer: linkrenderer },
-                  { text: 'View', datafield: 'SubjectId', width: 100 ,cellsrederer: view},
-                  { text: 'Edit', datafield: 'SubjectId', width: 100,cellsrederer: edit },
-                  { text: 'Delete', datafield: 'SubjectId', width: 100,cellsrederer:deleteid },
-                  { text: 'Download', datafield: 'SubjectId', width: 100,cellsrederer:download },
+                  { text: 'Subject', datafield: 'SubjectName', width: 430, cellsrenderer: linkrenderer },
+                  { text: 'View', datafield: 'SubjectId', width: 100 ,cellsrenderer: view1,cellsalign:'center'},
+                  { text: 'Add', datafield: 'SubjectId', width: 100,cellsrenderer: edit },
+                  { text: 'Delete', datafield: 'SubjectId', width: 100,cellsrenderer:deleteid },
+                  { text: 'Download', datafield: 'SubjectId', width: 100,cellsrenderer:download },
                   
                ]
             });
@@ -427,5 +480,37 @@ function showWin() {
 function showAddContest(){
     $('#addContestContainer').jqxWindow('show');
 }
+function addOptionToForm()
+{
+	
+	document.getElementById('optionContainer').innerHTML+="<div style='margin:10px; width:100%;'><input type='checkbox' id='coroption"+totaloption+"'/><input type='text' value='option' id='option"+totaloption+"' style='width:80%'/></div>"
+	totaloption+=1;
+}
+function showQuestionContainer(id){
+	subid=id;
+    $('#containerQuestion').jqxWindow('show');
+}
+function hideQuestionContainer()
+{
+    $('#containerQuestion').jqxWindow('hide');
 
-
+}
+function ContestView(id)
+{
+	subid=id;
+	var sourceurl="../../viewQuestion?"+subid;
+	 var source =
+            {
+                datatype: "xml",
+                datafields: [
+                    { name: 'SubjectName' },
+                    { name: 'SubjectId' },
+                    
+               ],
+                root: "channel",
+                record: "item",
+                url: sourceurl
+            };
+	
+	
+}
