@@ -1,12 +1,17 @@
 package CFB.database;
 import javax.sql.*;
 import java.sql.*;
+
 import javax.naming.*;
 
 public class dbConnect {
 	
 	Connection con = null;
 	Statement stmt = null;
+	
+	
+	
+	
 	public dbConnect()
 	{
 		
@@ -58,3 +63,69 @@ public class dbConnect {
 	
 
 }
+
+/*
+ * 
+	static final long serialVersionUID = 1L;
+	private Connection connection;
+	private Statement stmt;
+	private ResultSet rs;
+	private static String databaseName = "tgmc11cfb";
+	private static String databaseUsername = "suman123456789";
+	private static String databasePassword = "internet";
+	private static String driver = "com.mysql.jdbc.Driver";
+	
+	public DbConnection()
+	{
+		initialize();		
+	
+	}
+	void initialize()
+	{
+		
+		try
+		{
+			Class.forName(driver);
+            String url = "jdbc:mysql://208.11.220.249:3306/" + databaseName;
+            connection = DriverManager.getConnection(url, databaseUsername, databasePassword);
+            
+        } 
+		catch (Exception e) 
+		{
+			System.out.print(e);
+        }
+	}
+	public ResultSet executeQueryString(String string)
+	{
+		try{
+			stmt = connection.createStatement();
+			rs = stmt.executeQuery(string);
+			return rs;
+		}
+		catch(Exception e)
+		{
+			System.out.print("Excection in Query:");
+		
+		}
+		return null;
+	}
+	public int ChangeIntoDatabase(String string)
+	{
+		try{
+			stmt=connection.createStatement();
+			return(stmt.executeUpdate(string));
+			
+		}
+		catch(Exception e){
+			System.out.println("msg(DBConnection.java):"+e+"Exception in Insertion into Database");
+		}
+		return 0;
+		
+	}
+	public ResultSet getResultSet()
+	{
+		return rs;
+	
+	}
+ * 
+ * */
