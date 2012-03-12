@@ -397,10 +397,11 @@
 </div>
 <!-- End question-->
 <div id='viewquestion'>
-<div>
-ViewQuestion
-</div>
-<div id='viewquestioncontainer'>
-
-</div>
+	<div>
+	ViewQuestion
+	</div>
+	<div id='viewquestioncontainer'>
+		<div id='viewquestioncontainergrid' style='width:95%;'>
+		</div>
+	</div>
 </div>

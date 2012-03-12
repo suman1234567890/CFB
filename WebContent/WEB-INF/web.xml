@@ -55,4 +55,34 @@
     <servlet-name>addQuestion</servlet-name>
     <url-pattern>/addQuestion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>viewQuestion</display-name>
+    <servlet-name>viewQuestion</servlet-name>
+    <servlet-class>CFB.Faculty.subject.Question.viewQuestion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>viewQuestion</servlet-name>
+    <url-pattern>/viewQuestion.xml</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>deleteSubject</display-name>
+    <servlet-name>deleteSubject</servlet-name>
+    <servlet-class>CFB.Faculty.subject.deleteSubject</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteSubject</servlet-name>
+    <url-pattern>/deleteSubject</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>showContest</display-name>
+    <servlet-name>showContest</servlet-name>
+    <servlet-class>CFB.Faculty.contest.showContest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>showContest</servlet-name>
+    <url-pattern>/showContest</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -288,6 +288,9 @@ $(document).ready(function () {
             document.getElementById('elements').innerHTML = "<div id='elements1'></div><div align='center' > <input type='button' value='Add Contest' id='AddContestContainerButton'/></div>";
 
             $("#AddContestContainerButton").jqxButton({ width: 100, theme: theme });
+            $("#AddContestContainerButton").bind('click',function(){
+            	showAddContest();
+            });
             
             $("#addContestContainer").css('visibility', 'visible');
             addContest();
@@ -314,15 +317,15 @@ $(document).ready(function () {
 function addContest() {
 
     
-    var url = "../../pages/faculty/feed.xml";
+    var url = "../../showContest.xml";
     var source =
             {
                 datatype: "xml",
                 datafields: [
-                    { name: 'title' },
-                    { name: 'link' },
-                    { name: 'pubDate', type: 'date' },
-                    { name: 'creator', map: 'dc\\:creator' },
+                    { name: 'ContestName' },
+                    { name: 'Duration' },
+                    { name: 'ContestId'},
+                    
                ],
                 root: "channel",
                 record: "item",
@@ -350,10 +353,11 @@ function addContest() {
                 pageable: true,
                 autoheight: true,
                 columns: [
-                  { text: 'Subjects', datafield: 'link', width: 450, cellsrenderer: linkrenderer },
-                  { text: 'View', datafield: 'title', width: 100 },
-                  { text: 'Edit', datafield: 'pubDate', width: 150, cellsformat: "D" },
-                  { text: 'Download', datafield: 'creator', width: 100 }
+                  { text: 'Contests', datafield: 'ContestName', width: 350},
+                  { text: 'Duration', datafield: 'Duration', width: 100 },
+                  { text: 'Add', datafield: 'ContestId', width: 100, },
+                  { text: 'View', datafield: 'ContestId', width: 150, },
+                  { text: 'Download', datafield: 'ContestId', width: 100 }
                ]
             });
 
@@ -497,20 +501,59 @@ function hideQuestionContainer()
 }
 function ContestView(id)
 {
+	alert("method called");
 	subid=id;
-	var sourceurl="../../viewQuestion?"+subid;
+	var sourceurl="../../viewQuestion.xml?subid="+subid;
+	document.getElementById('viewquestioncontainer').innerHTML="<div id='viewquestioncontainergrid' style='width:95%;'></div><div><input type='button' value='OK' id='viewok'/></div>";
+	$('#viewok').jqxButton({width: '150', height: '25', theme: theme});
+	$('#viewquestion').jqxWindow('show');
 	 var source =
             {
                 datatype: "xml",
                 datafields: [
-                    { name: 'SubjectName' },
-                    { name: 'SubjectId' },
+                    { name: 'question' },
+                    { name: 'cmark' },
+                    { name: 'nmark' },
                     
                ],
                 root: "channel",
                 record: "item",
                 url: sourceurl
             };
+            $("#viewquestioncontainergrid").jqxGrid(
+            {
+                width: 700,
+                height:405,
+                source: source,
+                theme: theme,
+                sortable: true,
+                pageable: true,
+                autoheight: true,
+                columns: [
+                  { text: 'Question', datafield: 'question', width: 450 },
+                  { text: 'Correctmark', datafield: 'cmark', width: 100 },
+                  { text: 'Negativemark', datafield: 'nmark', width: 150 }
+                  
+               ]
+            });
+            $('#viewquestion').jqxWindow({ maxHeight: 550, maxWidth: 880, minHeight: 30, minWidth: 250, height: 445, width: 730,
+        		theme: theme, resizable: false, isModal: true, modalOpacity: 0.3,
+        
+    		});
+    		$("#viewok").bind('click', function () {
+                    
+                    $('#viewquestion').jqxWindow('hide');
+                });
+                
 	
 	
+}
+function ContestDeleteRow(id)
+{
+	$.post('../../deleteSubject',{subid:id},function()
+	{
+		alert("refreshing");
+		$('#elements1').jqxGrid('refreshdata');
+		
+	});
 }
