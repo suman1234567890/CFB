@@ -85,4 +85,24 @@
     <servlet-name>showContest</servlet-name>
     <url-pattern>/showContest</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>showSubjects</display-name>
+    <servlet-name>showSubjects</servlet-name>
+    <servlet-class>CFB.Faculty.contest.showSubjects</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>showSubjects</servlet-name>
+    <url-pattern>/showSubjects.txt</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>showQuestion</display-name>
+    <servlet-name>showQuestion</servlet-name>
+    <servlet-class>CFB.Faculty.contest.showQuestion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>showQuestion</servlet-name>
+    <url-pattern>/showQuestion.txt</url-pattern>
+  </servlet-mapping>
 </web-app>

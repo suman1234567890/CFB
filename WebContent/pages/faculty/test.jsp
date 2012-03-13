@@ -26,39 +26,156 @@
     <script type="text/javascript" src="../../jqwidgets/jqxtabs.js"></script>
     <script type="text/javascript" src="../../jqwidgets/jqxcheckbox.js"></script>
     <script type="text/javascript">
-    function abc(){
-    theme='classic';
-     var url = "../../showSubject.xml";
-    var source =
-            {
-                datatype: "xml",
-                datafields: [
-                    { name: 'SubjectName' },
-                    { name: 'SubjectId' },
-                    
-               ],
-                root: "channel",
-                record: "item",
-                url: url
-            };
-            
-      var dataAdapter = new $.jqx.dataAdapter(source);      
-    $("#subjectdropdown").jqxDropDownList({ source: dataAdapter, width: '200', height: '25', theme: theme,displayMember: 'SubjectName' });
+    function  abcd()
+    {
     
-    $('#jqxTabs').jqxTabs({ width: 580, height: 200, position: 'top', theme: 'classic' ,animationType: 'fade'});
-    $('#jqxWidget').jqxWindow({ maxHeight: 400, maxWidth: 700, minHeight: 200, minWidth: 200, height: 300, width: 600, theme: 'classic' });
-   
+                    var theme = 'classic';
+                    var url = "../../showSubjects.txt"; 
+                   // var url = "showSubjects.txt";
+				//var url='customers.txt';
+				var source =
+
+                {
+
+                    datatype: "json",
+
+                    datafields: [
+
+                        { name: 'SubjectName' },
+
+                        { name: 'SubjectId' }
+
+                    ],
+
+                    id: 'id',
+
+                    url: url
+
+                };
+
+                var dataAdapter = new $.jqx.dataAdapter(source);
+
+
+
+                // Create a jqxListBox
+                var source1=null;
+                document.getElementById('section2').innerHTML="<div style='width:95%'><div id='subjectdropdown' style='width:30%;float:left'></div><div id='qtncontainer' style='width:30%;float:left'></div><div id='finallist' style='float:right;width:30%'></div><div style='float:right;width:10%;margin-top:10%'><input type='button' id='addQues' value='Add'/></div></div><div style='float:right'><input type='text' id='sec2next' value='Next'/></div>";
+				$("#addQues").jqxButton({width:50,height:25,theme:theme});
+				$("#sec2next").jqxButton({width:50,height:25,theme:theme});
+				$("#addQues").bind('click',function(){
+					var selectedItems=$('#questiondropdown').jqxListBox('selectedIndexes');
+					alert(selectedItems.length);
+					count=selectedItems.length;
+                	while (count) {
+                   count--;
+                 	if (typeof selectedItems[count] !== 'undefined' &&
+                             selectedItems[count] !== -1) {
+                   //$("#finallist").jqxListBox('addItem', source1[selectedItems[count]]);
+                   var temp=$("#questiondropdown").jqxListBox('getItem', selectedItems[count] );
+                   $("#finallist").jqxListBox('addItem',temp.label);
+                   alert(temp.label);
+                   }
+                }
+					
+				});
+				$('#sec2next').bind('click',function(){
+					$('#jqxTabs').jqxTabs({ selectedItem: 2 }); 
+					document.getElementById('section3').innerHTML="<div id='final'></div>";
+					var sec3={};
+					$("#final").jqxListBox({ source: sec3, width: 250, height: 250, theme: theme });
+					var selectedItems=$('#finallist').jqxListBox('getItems');
+					alert(selectedItems.length);
+					count=selectedItems.length;
+                	while (count) {
+                   		count--;
+                 		if (typeof selectedItems[count] !== 'undefined' &&
+                        selectedItems[count] !== -1) {
+                   			//$("#finallist").jqxListBox('addItem', source1[selectedItems[count]]);
+                   		var temp=$("#finallist").jqxListBox('getItem', count );
+                   		$("#final").jqxListBox('addItem',temp);
+                   		alert(temp.value);
+                   		}
+                   	}
+				
+				});
+				
+				$('#sec1next').jqxButton({width:50,height:25,theme:theme});
+				
+				$('#sec1next').bind('click',function(){
+				$('#jqxTabs').jqxTabs({ selectedItem: 1 }); 
+				
+				});
+				
+				var sou={};
+				$("#finallist").jqxListBox({ source: sou, displayMember: "SubjectName", valueMember: "SubjectId", width: 250, height: 250, theme: theme });
+                $("#subjectdropdown").jqxListBox({ source: dataAdapter, displayMember: "SubjectName", valueMember: "SubjectId", width: 200, height: 250, theme: theme });
+                
+                $("#subjectdropdown").bind('select', function (event) {
+					
+                    if (event.args) {
+                    	
+						document.getElementById('qtncontainer').innerHTML="<div style='float:left' id='questiondropdown'></div>";
+                        var item = event.args.item;
+
+                        if (item) {
+                        	
+							var questnurl='../../showQuestion.txt?subid='+item.value;
+							// alert("mthodcalled"+questnurl);
+							
+							
+							
+							source1 =
+
+				                {
+				
+				                    datatype: "json",
+				
+				                    datafields: [
+				
+				                        { name: 'question' },
+				
+				                        { name: 'questionid' }
+				
+				                    ],
+				
+				                    id: 'id',
+				
+				                    url: questnurl
+				
+				                };
+				
+				                var dataAdapter = new $.jqx.dataAdapter(source1);
+							
+                            	
+                            	$("#questiondropdown").jqxListBox({ source: dataAdapter, displayMember: "question", valueMember: "questionid", width: 250, height: 250, theme: theme,multiple: true });
+                
+                				
+
+                            
+
+                            
+                        }
+
+                    }
+
+                });
+                
+                                
+    		$('#ContestTabs').jqxTabs({ width: 850, height: 500, position: 'top', theme: 'classic' ,animationType: 'fade'});
+   			$('#addContest').jqxWindow({ maxHeight: 400, maxWidth: 900, minHeight: 200, minWidth: 200, height: 510, width: 910, theme: 'classic' });
+                    
+    
     }
     </script>
 </head>
 <body>
-<input type='button' value='start' onclick="abc()"/>
-<div id='jqxWidget'>
-   <div id='jqxTabs'>
+<input type='button' value='start' onclick="abcd()"/>
+<div id='addContest'>
+   <div id='ContestTabs'>
 		<ul>
-		    <li style="margin-left: 30px;">Node.js</li>
-		    <li>JavaServer Pages</li>
-		    <li>Active Server Pages</li>
+		    <li style="margin-left: 30px;">Basic Details</li>
+		    <li>Select Question</li>
+		    <li>Save Question</li>
 		    
 		</ul>
 		<div id='secion1'>
@@ -66,18 +183,20 @@
 			Contest Name<input type='text' id='contestname'/>
 			Contest Detail <input type='text' id='contestdetail'/>
 			Contest Duration <input type='text' id='contestduration'/>
+			<input type='button' id='sec1next' value='next'/>
 			</div>
+			
+		</div>
+		<div id='section2'>
+		
 			<div>
 				<div id='subjectdropdown'>
 				
 				</div>
+				<div id='qtncontainer'><div id='questiondropdown'></div></div>
 			</div>
 		</div>
-		<div>
-		
-		section 2
-		</div>
-		<div>
+		<div id='section3'>
 		section 3
 		</div>
 	</div>

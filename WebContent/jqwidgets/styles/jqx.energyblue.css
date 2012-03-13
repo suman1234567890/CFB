@@ -52,6 +52,11 @@
    border-color: #a4bed4;
    background: #e8e8e8 url(images/bg_blueenergy.png) left center scroll repeat-x;
  }
+ .jqx-grid-selectionarea-energyblue {
+    background-color: #a4bed4; 
+    border: 1px solid #a4bed4;
+    opacity: 0.5;
+ }
 .jqx-grid-cell-energyblue
 {
     border-color: #a4bed4;
@@ -1134,6 +1139,10 @@
     color: #000000;
     background: #bed2e9;
     border: 1px solid #a4bed4;
+}
+.jqx-dropdownlist-state-focus-energyblue
+{
+  border: 1px solid #bed2e9;
 }
 .jqx-dropdownlist-state-disabled-energyblue
 {

@@ -31,135 +31,7 @@
     	
         var userid=<%=userid%>;
     </script>
-    <style type="text/css">
-        #form
-        {
-            height: 100px;
-            float: left;
-            margin-top: 30px;
-            margin-left: 20px;
-        }
-        .inputContainer
-        {
-            width: 150px;
-        }
-        .formInput
-        {
-            width: 150px;
-            outline: none;
-        }
-        .formInput2
-        {
-            width: 300px;
-            outline: none;
-        }
-        #hintWrapper
-        {
-            height: 130px;
-            float: right;
-        }
-        #hintSection
-        {
-            float: left;
-            margin-top: 30px;
-            margin-right: 20px;
-            padding: 5px;
-            width: 425px;
-        }
-        #checkBoxWrapper
-        {
-            float: left;
-            margin-left: 20px;
-            margin-top: 30px;
-        }
-        #section
-        {
-            margin: 5px;
-        }
-        #section2
-        {
-            width:600px;
-            padding:6px 0;
-            border: 0px
-            margin:auto;
-        }
-        #sectionButtonsWrapper
-        {
-            float: right;
-            margin-top: 30px;
-            margin-right: 10px;
-            width: 115px;
-        }
-        #hintBasket
-        {
-            margin-left: 20px;
-            margin-top: 7px;
-            float: left;
-            padding: 5px;
-        }
-        .basket div
-        {
-            position: relative;
-        }
-        .nextButton
-        {
-            float: right;
-            margin-left: 0px;
-        }
-        .backButton
-        {
-            float: left;
-            margin-left: 10px;
-        }
-        .addButton
-        {
-            float: left;
-            margin-left: 10px;
-        }
-        .removeButton
-        {
-            float: left;
-            margin-left: 10px;
-        }
-        #basketButtonsWrapper
-        {
-            float: right;
-            margin-top: 30px;
-            margin-right: 10px;
-            width: 115px;
-        }
-        #selectedProductsHeader
-        {
-            margin-left: 20px;
-            float: left;
-            width: 200px;
-        }
-        #selectedProductsButtonsWrapper
-        {
-            float: right;
-            margin-right: 10px;
-            width: 115px;
-            margin-top: 160px;
-        }
-        #products
-        {
-              float:left;
-                display:inline; /*required by IE6*/
-                width:289px;
-                border:1px solid #999;
-                margin:0 3px 0 6px;
-        }
-        #allquestion
-        {
-            float:left;
-    display:inline; /*required by IE6*/
-    width:289px;
-    border:1px solid #999;
-    margin:0 6px 0 3px;
-        }
-    </style>
-    
-</head>
+    </head>
 <body background="../../images/stripe4.png">
     <div id="header" style='width: 100%; height: 100px; margin: 0px; background: url(../../images/templatemo_title_bar_bg.jpg) repeat-x;'>
         <div id="site_title">
@@ -307,63 +179,8 @@
     </div>
 </body>
 </html>
-<div id='addContestContainer'>
-    <div>
-                        AddContest</div>
-            <div id='jqxTabs' >
-                <ul>
-                    <li style="margin-left: 30px;">Contest info</li>
-                    <li>Question Selection</li>
-                    <li>question Review</li>
-                </ul>
-                <div class="section">
-                    <div id="form">
-                        <div class="inputContainer">
-                            Contest Name:
-                            <input class="formInput" type="text" id="usernameInput" /></div>
-                        <div class="inputContainer">
-                            Contest Detail:
-                            <input class="formInput2" type="password" id="passwordInput" /></div>
-                    </div>
-                    <div id="hintWrapper">
-                        <div id="hintSection" class="hint">
-                        </div>
-                    </div>
-                    <div id="checkBoxWrapper">
-                        <div id="acceptCheckBox">
-                            I accept the terms and conditions</div>
-                    </div>
-                    <div id="sectionButtonsWrapper">
-                        <input type="button" value="Next" class="nextButton" id="nextButtonInfo" />
-                    </div>
-                </div>
-                <div class="section">
-                    <div id="products">
-                    </div>
-                    <input type="button" value="Back" class="addButton" id="addButton" align="middle" />
-                    <div id="allquestion">
-                    </div>
-                    <input type="button" value="Back" class="removeButton" id="removeButton" />
-                    <div class="hint" id="hintBasket">
-                    </div>
-                    <div id="basketButtonsWrapper">
-                        <input type="button" value="Back" class="backButton" id="backButtonBasket" />
-                        <input type="button" value="Next" class="nextButton" id="nextButtonBasket" />
-                    </div>
-                </div>
-                <div class="section">
-                    <div id="selectedProductsHeader">
-                        <h4>
-                            Selected products</h4>
-                        <div id="orderContainer">
-                        </div>
-                    </div>
-                    <div id="selectedProductsButtonsWrapper">
-                        <input type="button" value="Back" id="backButtonReview" class="backButton" />
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    
  <!--   Add Question -->
  <div id ='containerQuestion' >
  <div>
@@ -405,3 +222,39 @@
 		</div>
 	</div>
 </div>
+
+<!--- ADD CONTEST --->
+
+<div id='addContest' style='visibility:hidden'>
+   <div id='ContestTabs'>
+		<ul>
+		    <li style="margin-left: 30px;">Basic Details</li>
+		    <li>Select Question</li>
+		    <li>Save Question</li>
+		    
+		</ul>
+		<div id='secion1'>
+			<div style='margin:10px'>
+			Contest Name<input type='text' id='contestname'/>
+			Contest Detail <input type='text' id='contestdetail'/>
+			Contest Duration <input type='text' id='contestduration'/>
+			<input type='button' id='sec1next' value='next'/>
+			</div>
+			
+		</div>
+		<div id='section2'>
+		
+			<div>
+				<div id='subjectdropdown'>
+				
+				</div>
+				<div id='qtncontainer'><div id='questiondropdown'></div></div>
+			</div>
+		</div>
+		<div id='section3'>
+		section 3
+		</div>
+	</div>
+</div>
+
+<!--- END OF ADD CONTEST --->

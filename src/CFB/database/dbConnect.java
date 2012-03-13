@@ -32,7 +32,7 @@ public class dbConnect {
 		ResultSet rs=null;
 		try
 		{
-			stmt = con.createStatement();
+			stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 			rs = stmt.executeQuery(query);
 		}
 		catch(Exception e)

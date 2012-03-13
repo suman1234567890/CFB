@@ -72,6 +72,11 @@
  .jqx-grid-group-column  a:visited{
     color: #fff;
 }
+ .jqx-grid-selectionarea-shinyblack {
+    background-color: #3c3c3c; 
+    border: 1px solid #3c3c3c;
+    opacity: 0.5;
+ }
 .jqx-grid-cell-shinyblack
 {
     border-color: #3c3c3c;
@@ -1264,6 +1269,10 @@
     color: #fff;
     background: #000 url(images/bg_blackpressed.png) left center scroll repeat-x;
     border: 1px solid #000;
+}
+.jqx-dropdownlist-state-focus-shinyblack
+{
+  border: 1px solid #222;
 }
 .jqx-dropdownlist-state-disabled-shinyblack
 {

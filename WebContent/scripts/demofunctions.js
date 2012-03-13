@@ -1,33 +1,7 @@
 ﻿function loadDemo() {
     var navigation = $($.find('.navigation'));
 
-    this.isTouchDevice = $.jqx.mobile.isTouchDevice();
-    if (this.isTouchDevice) {
-        $.getScript('jqwidgets/jqxgrid.js', function () {});
-        $.getScript('jqwidgets/jqxdata.js', function () { });
-        $.getScript('jqwidgets/jqxgrid.sort.js', function () { });
-        $.getScript('jqwidgets/jqxgrid.filter.js', function () { });
-        $.getScript('jqwidgets/jqxgrid.pager.js', function () { });
-        $.getScript('jqwidgets/jqxgrid.selection.js', function () { });
-        $.getScript('jqwidgets/jqxgrid.grouping.js', function () { });
-        $.getScript('jqwidgets/jqxgrid.columnsresize.js', function () { });
-        $.getScript('jqwidgets/jqxtabs.js', function () { });
-        $.getScript('jqwidgets/jqxtree.js', function () { });
-        $.getScript('jqwidgets/jqxexpander.js', function () { });
-        $.getScript('jqwidgets/jqxnavigationbar.js', function () { });
-        $.getScript('jqwidgets/jqxrating.js', function () { });
-        $.getScript('jqwidgets/jqxnumberinput.js', function () { });
-        $.getScript('jqwidgets/jqxmaskedinput.js', function () { });
-        $.getScript('jqwidgets/jqxpanel.js', function () { });
-        $.getScript('jqwidgets/jqxchart.js', function () { });
-        $.getScript('jqwidgets/jqxdockpanel.js', function () { });
-        $.getScript('jqwidgets/jqxtooltip.js', function () { });
-        $.getScript('jqwidgets/jqxslider.js', function () { });
-        $.getScript('jqwidgets/jqxsplitter.js', function () { });
-        $.getScript('jqwidgets/jqxdocking.js', function () { });
-        $.getScript('jqwidgets/jqxprogressbar.js', function () { });
-        $.getScript('demos/jqxgrid/generatedata.js', function () { });        
-    }
+    var me = this;
     var lastclicked;
     navigation.find('.navigationContent').click(function (event) {
         var target = event.target;
@@ -110,7 +84,7 @@ function initmenu() {
     }
     $('#navigationmenu').jqxMenu({ theme: 'demo', autoCloseOnClick: true });
     $('#navigationmenu').css('visibility', 'visible');
- }
+}
 function prepareExamplePath(url) {
     var path = '<div id="pathElement">';
     var str = '';
@@ -199,7 +173,7 @@ function startDemo(target) {
     if ($("iframe").length > 0) {
         var iframe = $("iframe");
         iframe.unload();
-        iframe.remove();    
+        iframe.remove();
     }
 
     $("#innerDemoContent").empty();
@@ -289,14 +263,19 @@ function startDemo(target) {
                         });
                     }, "html"
             )
-          
-            if (isnonpopupdemo) {
-                var iframe = $('<iframe frameborder="0" src="' + url + '" id="jqxInnerDemoContent" style="border-collapse: collapse; margin-top: 10px; margin-left: 10px; width: 700px;"></iframe>');
-                $("#innerDemoContent").html('');
-                $("#innerDemoContent").append(iframe);
+    this.isTouchDevice = $.jqx.mobile.isTouchDevice();  
+    if (this.isTouchDevice) {
+        window.open(url, '_blank'); ;
+        return;
+    }
 
-                iframe.height(940);
-            }
+    if (isnonpopupdemo) {
+        var iframe = $('<iframe frameborder="0" src="' + url + '" id="jqxInnerDemoContent" style="border-collapse: collapse; margin-top: 10px; margin-left: 10px; width: 700px;"></iframe>');
+        $("#innerDemoContent").html('');
+        $("#innerDemoContent").append(iframe);
+        adjust();
+        iframe.height(940);
+    }
     return false;
 }
 function saveImageAs(imgOrURL) {
@@ -304,4 +283,20 @@ function saveImageAs(imgOrURL) {
         imgOrURL = imgOrURL.src;
     window.win = open(imgOrURL);
     setTimeout('win.document.execCommand("SaveAs")', 500);
+}
+function adjust() {
+    this.adjustFramePosition();
+    var self = this;
+    // setTimeout(function () { self.adjust(); }, 2000);
+}
+
+function adjustFramePosition() {
+    var iframe = $('#jqxInnerDemoContent');
+    if (!iframe || iframe.length == 0)
+        return;
+
+    var offset = iframe.offset();
+    if (parseFloat(offset.left) != parseInt(offset.left)) {
+        iframe[0].style.marginLeft = (iframe[0].style.marginLeft == '0.5px') ? '0px' : '0.5px';
+    }
 }

@@ -77,6 +77,12 @@
 {
     border-color: #60aad2;
 }
+ /*applied to the selection area.*/
+ .jqx-grid-selectionarea-darkblue {
+    background-color: #60aad2; 
+    border: 1px solid #60aad2;
+    opacity: 0.5;
+ }
 .jqx-grid-group-cell-darkblue 
 {
      border-color: #60aad2;
@@ -1231,6 +1237,10 @@
     color: #fff;
     background: #000 url(images/bg_darkbluepressed.png) left center scroll repeat-x;
     border: 1px solid #004A73;
+}
+.jqx-dropdownlist-state-focus-darkblue
+{
+  border: 1px solid #004A73;
 }
 .jqx-dropdownlist-state-disabled-darkblue
 {

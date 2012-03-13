@@ -53,6 +53,11 @@
    border-color: #dfdfdf;
    background: #f7f5f5;
  }
+ .jqx-grid-selectionarea-summer {
+    background-color: #dfdfdf; 
+    border: 1px solid #dfdfdf;
+    opacity: 0.5;
+ } 
 .jqx-grid-cell-summer
 {
     border-color: #dfdfdf;
@@ -1230,6 +1235,10 @@
     color: #fff;
     background: #fe5815;
     border: 1px solid #fe5815;
+}
+.jqx-dropdownlist-state-focus-energyblue
+{
+  border: 1px solid #000;
 }
 .jqx-dropdownlist-state-disabled-summer
 {

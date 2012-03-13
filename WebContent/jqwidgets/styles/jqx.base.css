@@ -227,6 +227,25 @@
  .jqx-grid-column-resizeline {
    border-right: 1px dotted #444; 
  }
+ /*applied to the validation popup during cell editing.*/
+ .jqx-grid-validation
+ {
+    background: #df2227;
+    color: #fff;
+    padding: 4px 8px;
+ }
+  .jqx-grid-validation-arrow-up
+ {
+    background-image: url('../resources/red_arrow_up.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+ }
+  .jqx-grid-validation-arrow-down
+ {
+    background-image: url('../resources/red_arrow_down.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+ }
   /*applied to the column's resize start line.*/
   .jqx-grid-column-resizestartline {
    border-right: 1px solid #444; 
@@ -2464,6 +2483,11 @@ of the horizontal scrollbar.*/
     margin: 0 0 0 0;
     cursor: pointer;
 }
+/*applied to the ComboBox when the widget is focused.*/
+.jqx-combobox-state-focus
+{
+    border: 1px solid #909090;
+}
 /*applied to the ComboBox when the widget is disabled.*/
 .jqx-combobox-state-disabled
 {
@@ -2472,7 +2496,6 @@ of the horizontal scrollbar.*/
     background: #ccc;
     color: #AAA;
 }
-
 
 /*jqxDropDownList Style*/
 /*applied to the dropdownlist's content element which displays the selected item's text or html.*/
@@ -2531,6 +2554,11 @@ of the horizontal scrollbar.*/
     margin: 0 0 0 0;
     cursor: pointer;
 }
+/*applied to the dropdownlist in focused state.*/
+.jqx-dropdownlist-state-focus
+{
+    border: 1px solid #909090;
+}
 /*applied to the dropdownlist in disabled state.*/
 .jqx-dropdownlist-state-disabled
 {
@@ -2540,7 +2568,6 @@ of the horizontal scrollbar.*/
     background: #ccc;
     color: #AAA;
 }
-
 /*jqxScrollBar Style*/
 .jqx-scrollbar
 {
@@ -3046,4 +3073,39 @@ of the horizontal scrollbar.*/
     background-image: url(images/close.png);
     background-repeat: no-repeat;
     background-position: center;
+}
+.jqx-draggable
+{
+    cursor: move;
+}
+.jqx-draggable-dragging
+{
+    border: 0px solid black;
+}
+.jqx-draggable-disabled
+{
+    background-color: Aqua;
+}
+.jqx-validator-hint
+{
+    height: 18px;
+    width: auto;
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-family: Verdana;
+    font-size: 13px;
+    border: 1px solid #6E0000;
+    background-color: #942724;
+    color: #fff;
+}
+.jqx-validator-hint-arrow
+{
+    height: 9px;
+    width: 9px;
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+    background-image: url(images/multi-arrow.gif);
 }

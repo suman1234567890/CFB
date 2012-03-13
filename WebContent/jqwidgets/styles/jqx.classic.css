@@ -1086,6 +1086,11 @@
     text-shadow: 0 1px 0 #333;
     border-image: initial;
 }
+/*applied to the dropdownlist in focused state.*/
+.jqx-dropdownlist-state-focus-classic
+{
+    border: 1px solid #909090;
+}
 .jqx-dropdownlist-state-disabled-classic
 {
     background: #ccc;
