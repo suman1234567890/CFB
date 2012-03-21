@@ -30,6 +30,7 @@ import CFB.database.dbConnect;
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		show(request,response);
 	}  	
 	
 	/* (non-Java-doc)
@@ -37,6 +38,7 @@ import CFB.database.dbConnect;
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		show(request,response);
 	}  
 	void show(HttpServletRequest request,HttpServletResponse response)
 	{

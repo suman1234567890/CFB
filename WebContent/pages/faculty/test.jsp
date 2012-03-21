@@ -79,7 +79,7 @@
 					
 				});
 				$('#sec2next').bind('click',function(){
-					$('#jqxTabs').jqxTabs({ selectedItem: 2 }); 
+					$('#ContestTabs').jqxTabs({ selectedItem: 2 }); 
 					document.getElementById('section3').innerHTML="<div id='final'></div>";
 					var sec3={};
 					$("#final").jqxListBox({ source: sec3, width: 250, height: 250, theme: theme });
@@ -102,7 +102,7 @@
 				$('#sec1next').jqxButton({width:50,height:25,theme:theme});
 				
 				$('#sec1next').bind('click',function(){
-				$('#jqxTabs').jqxTabs({ selectedItem: 1 }); 
+				$('#ContestTabs').jqxTabs({ selectedItem: 1 }); 
 				
 				});
 				

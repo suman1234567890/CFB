@@ -265,7 +265,8 @@ function showWin() {
     $('#eventWindow').jqxWindow('show');
 }
 function showAddContest(){
-    $('#addContestContainer').jqxWindow('show');
+    //$('#addContestContainer').jqxWindow('show');
+    abcd();
 }
 function addOptionToForm()
 {
@@ -342,6 +343,7 @@ function ContestDeleteRow(id)
 }
 function  abcd()
     {
+    	$("#addContest").css('visibility', 'visible');
     
                     var theme = 'classic';
                     var url = "../../showSubjects.txt"; 
@@ -393,7 +395,7 @@ function  abcd()
 					
 				});
 				$('#sec2next').bind('click',function(){
-					$('#jqxTabs').jqxTabs({ selectedItem: 2 }); 
+					$('#ContestTabs').jqxTabs({ selectedItem: 2 }); 
 					document.getElementById('section3').innerHTML="<div id='final'></div>";
 					var sec3={};
 					$("#final").jqxListBox({ source: sec3, width: 250, height: 250, theme: theme });
@@ -416,7 +418,7 @@ function  abcd()
 				$('#sec1next').jqxButton({width:50,height:25,theme:theme});
 				
 				$('#sec1next').bind('click',function(){
-				$('#jqxTabs').jqxTabs({ selectedItem: 1 }); 
+				$('#ContestTabs').jqxTabs({ selectedItem: 1 }); 
 				
 				});
 				
