@@ -6,6 +6,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.net.URL;
+
 import com.sun.speech.freetts.audio.AudioPlayer;
 import com.sun.speech.freetts.audio.JavaStreamingAudioPlayer;
 import com.sun.speech.freetts.audio.NullAudioPlayer;
@@ -68,9 +70,10 @@ import com.sun.speech.freetts.VoiceManager;
 	       
 	        voice.speak(Values);
 	        
-	        audioPlayer.close();
+	        
 	                
 	        File fileMp3 = new File("Sumon1.wav");
+	        
 	        FileInputStream fis = new FileInputStream(fileMp3);
 	        response.setContentType("audio/x-wav");
 	        response.setHeader("Content-Disposition", "filename=abc.wav");
@@ -82,13 +85,15 @@ import com.sun.speech.freetts.VoiceManager;
 	            while ((byteRead = fis.read()) != -1) {
 	                os.write(byteRead);
 	            }
-	           // os.flush();
+	           os.flush();
 	        } catch (Exception excp) {
 	            //downloadComplete = "-1";
 	            excp.printStackTrace();
 	        } finally {
 	            os.close();
 	            fis.close();
+	            audioPlayer.close();
+	            
 	        }
 	       
 	       

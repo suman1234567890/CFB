@@ -233,10 +233,10 @@
             <ul id="a">
                 <li><a href="Features.htm" class="iframe">Home</a></li>
                 <li><a href="Features.htm" class="iframe">Exam</a></li>
-                <li><a href="Features.htm" class="iframe">Advise</a></li>
-                <li><a href="Features.htm" class="iframe">Forum</a></li>
+                <li><a href="Features.htm" class="iframe">Benifit</a></li>
+                <li><a href="http://pastehtml.com/raw/btjzls0gs.html" class="iframe">Advice</a></li>
                 <li><a href="Features.htm" class="iframe">FAQ</a></li>
-                <li><a href="Features.htm" class="iframe">Contact US</a></li>
+                <li><a href="http://pastehtml.com/raw/btgtoyjz0.html" class="iframe">Contact US</a></li>
             </ul>
         </div>
         <!-- end of menu -->
@@ -263,10 +263,10 @@
         <div id="templatemo_footer">
             <ul class="footer_menu">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Snakes</a></li>
-                <li><a href="#">Snakes</a></li>
-                <li><a href="#">Snakes</a></li>
-                <li><a href="#">Snakes</a></li>
+                <li><a href="#">Advice</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Faq</a></li>
             </ul>
         </div>
     </div>

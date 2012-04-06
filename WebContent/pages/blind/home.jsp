@@ -7,6 +7,21 @@
 <title>Insert title here</title>
 <%@page import="java.sql.ResultSet" %>
 <%@page import="CFB.database.*" %>
+<script type="text/javascript" src="../../scripts/jquery-1.7.1.min.js" ></script>
+<script type='text/javascript'>
+function Sound(text) {
+   
+   
+   document.getElementById("Snakes").innerHTML="<embed src='../../Servlet.mp3?Text="+text+"'hidden=true autostart=true loop=false>";
+}
+	$(document).ready(function () {
+		var s='i love india';
+		Sound(s);
+
+
+	});
+</script>
+
 </head>
 <body style="height:650px;width:100%;" >
 <%
@@ -17,8 +32,7 @@ try {
 	ResultSet rs=(ResultSet)hs.getAttribute("ResultSet");		
 	if(rs.next())
 	{
-			
-			
+				
 			
 			
 			dbConnect db = new dbConnect();
@@ -28,16 +42,21 @@ try {
 			rs1.next();
 			
 			%>
-<div style="height:90%;width:90%;border-color: black;border-style:groove;margin:3%">
+	<div style="height:50%;width:50%;border-color: black;border-style:groove;left:30%;top:30%;background-image: url('../../images/stripe4.png');position:absolute;">
   	<div style='margin: 50px;' align="center">
   		<label style='font: 900;font-size: xx-large'><%=rs1.getString(1) %></label>
   	</div>
   	<div style='margin:50px;'>
   	<%
   	while(rs2.next())
-  		{%>
-  		<label  style='margin:50px; font: 900;font-size:large'><%=rs2.getString(1) %></label><br/>
-  		<%} %>
+  		{
+  		%>
+  		<div style='height:20px;'>
+  		<label  style='font: 900;font-size:large'>Option :<%=rs2.getString(1) %></label><br/>
+  		</div>
+  		<%
+  		} 
+  		%>
   	</div>
   	<div align="middle">
   		<input  type='submit' value='submit' style="width:100px;height:30px;"/>
@@ -52,7 +71,7 @@ try {
 	e.printStackTrace();
 }
 %>
-
+<div id='Snakes'></div>
 
 </body>
 </html>

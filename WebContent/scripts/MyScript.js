@@ -96,10 +96,83 @@ $(document).ready(function () {
             addSubject();
 
         }
+        if (text == 63) {
+            alert("This is View Users");
+            document.getElementById('elements').innerHTML = "<div id='elements1'></div>";
+            viewUser();
+            
+
+        }
+        if (text == 66) {
+            alert("This is My Candidate");
+            document.getElementById('elements').innerHTML = "<div id='elements1'></div><div id='buttonnt'><input type='button' id='buttoncont' value='add Candidate'/>'</div><div id='msgcont'></div>";
+            MyCandidate();
+            
+
+        }
         alert(text);
     });   //////
 });
+function MyCandidate()
+{
+	 var url = "../../mycandidate.xml";
+    var source =
+            {
+                datatype: "xml",
+                datafields: [
+                    { name: 'CandidateName' },
+                    
+                    { name: 'CandidateId'},
+                    
+               ],
+                root: "channel",
+                record: "item",
+                url: url
+            };
 
+            var linkrenderer = function (row, column, value) {
+                if (value.indexOf('#') != -1) {
+                    value = value.substring(0, value.indexOf('#'));
+                }
+                var format = { target: '"_blank"' };
+                //var html = $.jqx.dataFormat.formatlink(value, format);
+                var html = "<a href='#' onclick='showWin()'>"+value+"</a>";
+                return html;
+            }
+
+    // Create jqxGrid.
+    $("#elements1").jqxGrid(
+            {
+                width: 830,
+                height:405,
+                source: source,
+                theme: theme,
+                sortable: true,
+                pageable: true,
+                autoheight: true,
+                columns: [
+                  { text: 'Candidate Name', datafield: 'CandidateName', width: 630},
+                  { text: 'Result', datafield: 'CandidateId', width: 100 },
+                  { text: 'Delete', datafield: 'CandidateId', width: 100, }
+                  
+               ]
+            });
+            $("#buttoncont").jqxButton({ width: 100, theme: theme });
+            $("#buttoncont").bind('click',function(){
+            		document.getElementById('msgcont').innerHTML="<div id='tablecont'><div>Add Candidate</div><div><table><tr><td>Name:</td><td><input type='text' id='name'/></td></tr><tr><td>Phone Number:</td><td><input type='text' id='pno'/></td></tr><tr><td>Date OF Birth:</td><td><input type='text' id='DOB'/></td></tr></table><div><input type='button' id='sub' value='submi'/></div></div></div>";
+            		
+            		
+            
+            $('#tablecont').jqxWindow({ maxHeight: 200, maxWidth: 280, minHeight: 30, minWidth: 250, height: 200, width: 270,
+        theme: theme, resizable: false, isModal: true, modalOpacity: 0.3,
+        
+   			 });
+   			 $('#tablecont').jqxWindow('show');
+   			 $("#sub").jqxButton({ width: 80, theme: theme });
+   			 
+   			 });
+	
+}
 function addContest() {
 
     
@@ -144,6 +217,71 @@ function addContest() {
                   { text: 'Add', datafield: 'ContestId', width: 100, },
                   { text: 'View', datafield: 'ContestId', width: 150, },
                   { text: 'Download', datafield: 'ContestId', width: 100 }
+               ]
+            });
+
+
+
+}
+function viewUser() {
+
+    
+    var url = "../../showUser.xml";
+    var source =
+            {
+                datatype: "xml",
+                datafields: [
+                    { name: 'UserName' },
+                    { name: 'Category' },
+                    { name: 'Uid'},
+                    
+               ],
+                root: "channel",
+                record: "item",
+                url: url
+            };
+
+            var linkrenderer = function (row, column, value) {
+                if (value.indexOf('#') != -1) {
+                    value = value.substring(0, value.indexOf('#'));
+                }
+                var format = { target: '"_blank"' };
+                //var html = $.jqx.dataFormat.formatlink(value, format);
+                
+                if(value=="0")
+                {
+                	return "Admin";
+                }
+                if(value=="1")
+                {
+                	return "Faculty";
+                }
+                if(value=="2")
+                {
+                	return "Guest";
+                }
+                if(value=="3")
+                {
+                	return "Candidate";
+                }
+                
+                var html = "guest";
+                return html;
+            }
+
+    // Create jqxGrid.
+    $("#elements1").jqxGrid(
+            {
+                width: 830,
+                height:405,
+                source: source,
+                theme: theme,
+                sortable: true,
+                pageable: true,
+                autoheight: true,
+                columns: [
+                  { text: 'Category', datafield: 'Category', width: 100,cellsrenderer: linkrenderer },
+                  { text: 'Delete', datafield: 'Uid', width: 100 }
                ]
             });
 
